@@ -168,3 +168,9 @@ python -OO -m py_compile demo.py
 1 (-O): .pyo
 2 (-OO): .pyo
 ```
+
+
+
+## python程序执行原理
+
+![Alt text](./1578032890559.png)
