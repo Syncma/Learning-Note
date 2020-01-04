@@ -138,34 +138,48 @@ MySQL通过关键字将SQL语句进行解析，并生成一棵对应的“解析
 
 ### 新建数据库
 
-1.默认create database db_name命令，生成的数据库是utf8编码
+1.默认create database db_name命令，生成的数据库是latin1编码
 
 ```
-mysql> create database vision;
-Query OK, 1 row affected (0.01 sec)
+
+MariaDB [(none)]> create database test;
+Query OK, 1 row affected (0.001 sec)
 
 
-mysql> use vision;
+查看所有数据库情况：
+MariaDB [test]> SELECT SCHEMA_NAME 'database', default_character_set_name 'charset', DEFAULT_COLLATION_NAME 'collation' FROM information_schema.SCHEMATA;
++--------------------+---------+-------------------+
+| database           | charset | collation         |
++--------------------+---------+-------------------+
+| information_schema | utf8    | utf8_general_ci   |
+| test               | latin1  | latin1_swedish_ci |
+| mysql              | latin1  | latin1_swedish_ci |
+| performance_schema | utf8    | utf8_general_ci   |
++--------------------+---------+-------------------+
+4 rows in set (0.001 sec)
+
+
+查看单个数据库：
+MariaDB [(none)]> use test;
 Database changed
 
-mysql> show variables like "collation_database";
-+--------------------+--------------------+
-| Variable_name | Value |
-+--------------------+--------------------+
-| collation_database | utf8mb4_0900_ai_ci |
-+--------------------+--------------------+
-1 row in set (0.00 sec)
 
-mysql> show variables like "character_set_database";
-+------------------------+---------+
-| Variable_name | Value |
-+------------------------+---------+
-| character_set_database | utf8mb4 |
-+------------------------+---------+
-1 row in set (0.00 sec)
+MariaDB [test]> show variables like "collation_database";
++--------------------+-------------------+
+| Variable_name      | Value             |
++--------------------+-------------------+
+| collation_database | latin1_swedish_ci |
++--------------------+-------------------+
+1 row in set (0.001 sec)
 
-备注：
-mysql 8.0+  数据库默认创建都是utf8mb4 字符集
+MariaDB [test]> show variables like "character_set_database";
++------------------------+--------+
+| Variable_name          | Value  |
++------------------------+--------+
+| character_set_database | latin1 |
++------------------------+--------+
+1 row in set (0.001 sec)
+
 ```
 
 如果想要生成utf8mb4编码,可以使用下面命令
