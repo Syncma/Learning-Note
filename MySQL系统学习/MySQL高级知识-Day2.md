@@ -1,0 +1,261 @@
+# MySQL高级知识-Day2
+
+[toc]
+
+## 查看存储引擎
+
+
+一般情况下，mysql会默认提供多种存储引擎,你可以通过下面的查看:
+
+看你的mysql现在已提供什么存储引擎:
+```
+mysql> show engines;
+```
+
+看你的mysql当前默认的存储引擎:
+```
+mysql> show variables like '%storage_engine%';
+```
+
+**`默认都是InnoDB引擎`**
+
+查看某个表是使用哪种存储引擎:
+```
+mysql> show table status like 'user' \G    //查看user表
+```
+
+
+### MyISAM 与InnoDB关系
+
+![Alt text](./数据库引擎.png)
+
+
+总结：
+
+mysql 中的MyISAM和InnoDB最重要的区别：
+
+> **`MyISAM是表锁， InnoDB是行锁`**
+
+
+## 行锁和表锁
+
+当选中某一行时，如果是通过主键或者索引选中的，这个时候是行级锁；
+如果是通过其它条件选中的，这个时候行级锁会升级成表锁，其它事务无法对当前表进行更新或插入操作
+
+举例子：
+update  如果where 字段是唯一索引或者主键就是行锁，如果where 是一个范围 就是表锁
+
+alter table 也是表锁
+
+一般的索引，如果只索引到某一条数据  也是行锁
+delete 也是一样
+
+总结：
+>如果数据的变动仅仅是**某一条数据，就是行锁**
+>范围的和表结构更新都是表锁
+>另外myisam引擎都是表锁
+>
+>表级锁—-开销小，加锁快，不会出现死锁，并发度低
+>行级锁—-开销大，加锁慢，会出现死锁，并发度也高.
+
+
+
+## 事务
+
+
+### 事务是什么
+数据库事务(Database Transaction) ，是指作为单个逻辑工作单元执行的一系列操作，要么完全地执行，要么完全地不执行。
+
+
+### 事务特点
+事务必须具备以下四个属性，简称**ACID 属性**
+
+	* 原子性（Atomicity）：就是事务里面的所有操作要么全部做完，要么都不做， 只要有一个操作失败就需要回滚
+	* 一致性（Consistency）：当事务完成时，数据必须处于一致状态。
+	* 隔离性（Isolation）：并发的事务之间不会互相影响
+	* 持久性（Durability）：一旦事务提交后，它所作的修改将会永久保存在数据库中，即使宕机也不会丢失
+
+
+
+### 事务方法
+MySQL中支持事务的存储引擎InnoDB
+
+1、用 BEGIN, ROLLBACK, COMMIT来实现
+
+BEGIN 开始一个事务
+ROLLBACK 事务回滚
+COMMIT 事务确认
+
+2、直接用 SET 来改变 MySQL 的自动提交模式:
+
+SET AUTOCOMMIT=0 禁止自动提交
+SET AUTOCOMMIT=1 开启自动提交
+
+
+### 事务案例
+
+```
+CREATE  DATABASE  demo;
+USE demo;
+CREATE TABLE demo_transaction_test(id INT(5));
+
+/* 这里要注意int和int(5)区别 */
+int 代表整数类型存储和范围
+int(5) 只是显示宽度，即如果我存储了 一个 9， 则在mysql中，其实int(1)的字段存储的是9，而int (5)存储的是00009
+
+/* 事务开始 */
+BEGIN;
+INSERT INTO demo_transaction_test VALUE(5);
+INSERT INTO demo_transaction_test VALUE(6);
+COMMIT;
+
+SELECT * FROM demo_transaction_test;
+
+
+/* 事务回滚 */
+BEGIN;
+INSERT INTO demo_transaction_test VALUE(7);
+
+ROLLBACK;
+
+SELECT * FROM demo_transaction_test;
+
+```
+
+
+### 事务开启关闭
+
+默认情况下，每条单独的SQL语句视为一个事务；关闭默认提交状态后，可手动开启、关闭事务。
+
+```
+show variables like 'auto%';
+```
+
+运行结果：
+```
+"auto_increment_increment"	"1"
+"auto_increment_offset"	"1"
+"autocommit"	"ON"
+"automatic_sp_privileges"	"ON"
+```
+
+
+**注意到 autocommit ，自定提交是打开的**
+
+
+关闭/开启自动提交状态
+set autocommit = 0|1;
+
+
+说明：
+>值为0：关闭自动提交；
+ >值为1：开启自动提交。
+
+>**关闭自动提交后，从下一条SQL语句开始则开启新事务，需使用commit或rollback语句结束该事务**。
+
+
+
+### Python例子
+
+Python 程序想要操作数据库，首先需要安装 模块 来进行操作，Python 2 中流行的模块为 MySQLdb，而该模块在Python 3 中将被废弃，而使用**PyMySQL**  -`这里使用python3`
+
+1. 模块安装
+```python
+pip install pymysql
+```
+
+2. 测试例子
+
+```python
+import pymysql
+import traceback
+
+# 不建议这样使用
+# connection = pymysql.connect(
+#     host='localhost',
+#     user='root',
+#     password='Qian123#',
+#     db='test',
+# )
+
+
+# 建议使用模块化
+def connect_mysql():
+
+    db_config = {
+        'host': 'localhost',
+        'port': 3306,
+        'user': 'root',
+        'password': '123456',
+        'charset': 'utf8',
+        'db': 'demo'
+    }
+
+    conn = pymysql.connect(**db_config)
+
+    return conn
+
+
+# 使用连接池技术
+# 数据库连接池包 DBUtils- pip install DBUtils
+from DBUtils.PooledDB import PooledDB  # 导入线程池对象
+
+
+def connect_mysql_pool():
+
+    db_config = {
+        'host': 'localhost',
+        'port': 3306,
+        'user': 'root',
+        'password': '123456',
+        'charset': 'utf8',
+        'db': 'demo',
+        'mincached': 20  # 20个连接
+        # 最少的空闲连接数，如果空闲连接数小于这个数，pool会创建一个新的连接
+    }
+
+    pool = PooledDB(pymysql, **db_config)
+    conn = pool.connection()
+
+    return conn
+
+
+try:
+    # conn = connect_mysql()
+    conn = connect_mysql_pool()
+    cursor = conn.cursor()  # 创建游标
+    # 游标是系统为用户开设的一个数据缓存区，存放SQL语句执行的结果，
+    # 用户可以用SQL语句逐一从游标中获取记录，并赋值给变量，交由Python进一步处理
+
+    sql = "select * from demo_transaction_test"
+    cursor.execute(sql)
+    result = cursor.fetchall()  # 获取所有结果
+    print(result)
+
+    # 事务操作
+    try:
+        # insert_sql = "insert into demo_transaction_test values(1111)" # 输整数类型
+        insert_sql = "insert into demo_transaction_test values('hello')"  # 输字符串类型
+        cursor.execute(insert_sql)
+        conn.commit()
+
+    except Exception as e:
+        print(e)
+        conn.rollback()
+        conn.close()
+
+except Exception as e:
+    msg = traceback.format_exc()
+    print("ERROR=", e)  # 这是出错信息
+    print("MSG=", msg)  # 这是出错栈信息
+
+```
+
+
+### 事务原理
+-待补充
+
+
+
+
+
