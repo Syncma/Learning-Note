@@ -1,0 +1,5 @@
+{"level":"INFO","timestamp":"2020-01-06 15:29:58.418","file":"apiserver/main.go:54","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2020-01-06 15:29:58.921","file":"apiserver/main.go:51","msg":"The router has been deployed successfully."}
+{"level":"ERROR","timestamp":"2020-01-06 16:10:59.987","file":"model/init.go:33","msg":"Database connection failed. Database name: ","data":{"error":"Error 1045: Access denied for user ''@'localhost' (using password: NO)"}}
+{"level":"INFO","timestamp":"2020-01-06 16:11:00.041","file":"apiserver/main.go:59","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2020-01-06 16:11:00.560","file":"apiserver/main.go:56","msg":"The router has been deployed successfully."}

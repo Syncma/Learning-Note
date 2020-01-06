@@ -1,0 +1,11 @@
+{"level":"INFO","timestamp":"2020-01-06 15:29:58.418","file":"apiserver/main.go:54","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2020-01-06 15:29:58.921","file":"apiserver/main.go:51","msg":"The router has been deployed successfully."}
+{"level":"ERROR","timestamp":"2020-01-06 16:10:59.987","file":"model/init.go:33","msg":"Database connection failed. Database name: ","data":{"error":"Error 1045: Access denied for user ''@'localhost' (using password: NO)"}}
+{"level":"INFO","timestamp":"2020-01-06 16:11:00.041","file":"apiserver/main.go:59","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2020-01-06 16:11:00.560","file":"apiserver/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"ERROR","timestamp":"2020-01-06 17:00:51.327","file":"model/init.go:33","msg":"Database connection failed. Database name: ","data":{"error":"Error 1045: Access denied for user ''@'localhost' (using password: NO)"}}
+{"level":"INFO","timestamp":"2020-01-06 17:00:51.361","file":"apiserver/main.go:59","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2020-01-06 17:00:51.863","file":"apiserver/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"DEBUG","timestamp":"2020-01-06 17:01:23.503","file":"user/create.go:26","msg":"username is: [], password is []"}
+{"level":"ERROR","timestamp":"2020-01-06 17:01:23.503","file":"user/create.go:29","msg":"Get an error","data":{"error":"Err - code: 20102, message: The user was not found. This is add message., error: username can not found in db: xx.xx.xx.xx"}}
+{"level":"DEBUG","timestamp":"2020-01-06 17:01:23.504","file":"user/create.go:33","msg":"err type is ErrUserNotFound"}
