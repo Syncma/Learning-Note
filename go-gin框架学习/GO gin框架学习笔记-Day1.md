@@ -32,7 +32,9 @@ go版本： v1.13.1
 Golang 提供一个环境变量 GO111MODULE 来设置是否使用mod，它有3个可选值，分别是off, on, auto（默认值），具体含义如下：
 
 >off: GOPATH mode，查找vendor和GOPATH目录
+
 >on：module-aware mode，使用 go module，忽略GOPATH目录
+
 >auto：如果当前目录不在$GOPATH 并且 当前目录（或者父目录）下有go.mod文件，则使用 GO111MODULE， 否则仍旧使用 GOPATH mode。
 
 
@@ -49,13 +51,21 @@ GO111MODULE=""
 
 go mod命令：
 >go mod download 下载模块到本地缓存，缓存路径是 $GOPATH/pkg/mod/cache
+
 >go mod edit 是提供了命令版编辑 go.mod 的功能
+
 >例如 go mod edit -fmt go.mod 会格式化 go.mod
+
 >go mod graph 把模块之间的依赖图显示出来
+
 >go mod init 初始化模块（例如把原本dep管理的依赖关系转换过来）
+
 >go mod tidy 增加缺失的包，移除没用的包
+
 >go mod vendor 把依赖拷贝到 vendor/ 目录下
+
 >go mod verify 确认依赖关系
+
 >go mod why 解释为什么需要包和模块
 
 
@@ -131,10 +141,14 @@ go 会自动生成一个 go.sum 文件来记录 dependency tree
 使用 Go Modules 后，不在需要以下内容：
 
 >1.不用再定义 GOPATH （这里指的是 go build 、 go install 等等 go 命令。IDE 插件目前还是需要 GOPATH）
-2.工程目录放置，不再需要 src 目录下 （同上情况）
-3.不再需要 vendor 机制以及其他第 3 方 dep 工具
-4.工程内不再有依赖库代码。
-5.使用 Go Modules 后，理论上：
+
+>2.工程目录放置，不再需要 src 目录下 （同上情况）
+
+>3.不再需要 vendor 机制以及其他第 3 方 dep 工具
+
+>4.工程内不再有依赖库代码。
+
+>5.使用 Go Modules 后，理论上：
 	* 代码可以随意放置
 	* 执行 Go 命令，不再需要指定 GOPATH
 
