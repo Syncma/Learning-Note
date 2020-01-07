@@ -16,3 +16,4 @@ requests源码 [git地址](https://github.com/psf/requests)
 |   Day3 | [hook](https://github.com/Syncma/Learning-note/blob/master/Requests%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/Requests%20%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB-Day3.md)|`完成`
 |   Day4  | [adapters](https://github.com/Syncma/Learning-note/blob/master/Requests%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/Requests%20%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB-Day4.md)|`完成`
 |   Day5  | [Request](https://github.com/Syncma/Learning-note/blob/master/Requests%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/Requests%20%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB-Day5.md)|`完成`
+|   pytest学习笔记  | [pytest](https://github.com/Syncma/Learning-note/blob/master/Requests%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/pytest%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)|`完成`
