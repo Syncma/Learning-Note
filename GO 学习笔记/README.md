@@ -3,7 +3,7 @@
 一边学go gin框架，一边复习go语法知识
 
 
-## 01  目录
+## 01 <i class="icon-list"></i> 目录
 |章节|标题|进度
 |:-:|:-:|:-:|
 |   第1章  | [go概述](https://github.com/Syncma/Learning-note/blob/master/GO%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Go%20%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%20-%E7%AC%AC1%E7%AB%A0.md)|`完成`
