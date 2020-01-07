@@ -1,0 +1,207 @@
+# Go 语言学习笔记 -第5章
+
+
+## 函数
+
+
+### 基本语法
+
+```
+func 函数名 (形参类表） (返回列表) {
+    执行语句
+    return 返回值列表
+
+}
+
+1.形参列表 ： 表示函数的输入
+2.函数中的语句：表示为了实现某一功能代码块
+3.函数可以有返回值，也可以没有, 也可以有多个返回值
+```
+
+
+### 例子
+```go
+package main
+
+import (
+	"fmt"
+)
+
+//函数写法
+func calc(n1 float64, n2 float64, operator byte) float64 {
+	var res float64
+	switch operator {
+	case '+':
+		res = n1 + n2
+	case '-':
+		res = n1 - n2
+	case '*':
+		res = n1 * n2
+	case '/':
+		res = n1 / n2
+
+	default:
+		fmt.Println("操作符号错误")
+
+	}
+	return res
+}
+
+func main() {
+
+	//输入两个数字,再输入一个运算符,得到结果
+
+	//传统做法:
+	//缺点：1.代码冗余  2.不利于代码维护
+	// var n1 float64 = 1.2
+	// var n2 float64 = 2.3
+	// var operator byte = '-'
+	// var res float64
+
+	// switch operator {
+	// case '+':
+	//  res = n1 + n2
+	// case '-':
+	//  res = n1 - n2
+	// case '*':
+	//  res = n1 * n2
+	// case '/':
+	//  res = n1 / n2
+
+	// default:
+	//  fmt.Println("操作符号错误")
+
+	// }
+
+	// fmt.Println("res=", res)
+
+	var n1 float64 = 1.2
+	var n2 float64 = 2.3
+	var operator byte = '+'
+	result := calc(n1, n2, operator)
+
+	fmt.Println("result=", result)
+
+}
+
+```
+
+### 函数注意事项
+
+1.在Go中，函数也是一种数据类型
+
+可以赋值给一个变量，则该变量就是一个函数类型的变量，通过该变量可以对函数进行调用
+
+```go
+package main
+
+import "fmt"
+
+func getsum(n1 int, n2 int) int {
+    return n1 + n2
+}
+
+func main() {
+
+    a := getsum
+    fmt.Printf("a的类型%T, getsum的类型%T\n", a, getsum)
+
+    res := a(10, 40)
+    fmt.Println("res=", res)
+}
+
+```
+
+
+2.函数既然是一种数据类型，因此在Go中，函数可以作为形参 并且调用
+
+```go
+package main
+
+import "fmt"
+
+func getsum(n1 int, n2 int) int {
+    return n1 + n2
+}
+
+func myfun(funvar func(int, int) int, num1 int, num2 int) int {
+    return funvar(num1, num2)
+}
+
+func main() {
+
+    a := getsum
+    fmt.Printf("a的类型%T, getsum的类型%T\n", a, getsum)
+
+    res := a(10, 40)
+    fmt.Println("res=", res)
+
+    res2 := myfun(getsum, 50, 60)
+    fmt.Println("res2=", res2)
+}
+
+```
+
+3.支持对函数返回值命名
+
+```go
+package main
+
+import "fmt"
+
+func getSumAndSub(n1 int, n2 int) (sum int, sub int) {
+    sum = n1 + n2
+    sub = n1 - n2
+    return
+}
+
+func main() {
+
+    a, b := getSumAndSub(10, 40)
+    fmt.Printf("a=%v b=%v", a, b)
+
+}
+```
+
+
+4.函数闭包
+
+```go
+
+package main
+
+import (
+    "fmt"
+)
+
+func adder() func(int) int {
+    sum := 1
+    return func(x int) int {
+        sum *= x
+        return sum
+    }
+
+}
+
+func main() {
+
+    //函数是完全闭包的
+    //两个函数的执行互不影响，完全各干各的。
+    pos, neg := adder(), adder()
+    for i := 1; i < 5; i++ {
+        fmt.Println(pos(i), neg(-1*i))
+    }
+
+}
+```
+
+5.Golang的函数可以接受可变参数
+
+```go
+//fmt.Println("hello", "world")
+
+func Println(a ...interface{}) (n int, err error) {
+    return Fprintln(os.Stdout, a...)
+}
+
+```

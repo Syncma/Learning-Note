@@ -1,0 +1,232 @@
+# Go 语言学习笔记 -第2章
+
+[toc]
+## 程序结构
+
+### 名称
+
+首字母大写的一般是public方法，首字母小写不能直接调用
+
+使用驼峰式的风格
+
+
+### 声明
+
+每一个文件都是以package声明开头，表明文件是属于哪个包
+有且只有一个main包
+
+
+
+### 变量
+
+1.变量是程序的基本组成单位
+
+变量相当于内存中一个数据储存空间的表示
+你可以把变量看做一个房间的门牌号
+通过门牌号我们可以找到房间
+
+同样的道理，通过变量名可以访问到变量值
+
+2.变量使用的基本步骤：
+1、声明变量（定义变量）
+2、赋值
+3、使用
+
+3.变量使用注意事项：
+1、**变量表示内存中的一个存储区域，该区域有自己的名称(变量名)和类型(数据类型）**
+
+2、Go变量使用三种方式
+1）指定变量类型，声明后若不赋值使用默认值
+2）根据值自行判定变量类型
+3）省略var, **注意`:= 左侧的变量不应该是已经声明过的 否则会导致编译错误`**
+
+3、多变量声明
+一次性声明多个变量
+
+```go
+package main
+
+import "fmt"
+
+//全局变量
+var n1 = 100
+var n2 = 200
+var name = "jack"
+
+//上面声明方式也可以改成一次性声明
+var (
+    n3    = 300
+    n4    = 900
+    name2 = "mary"
+)
+
+func main() {
+    //指定变量类型，声明后若不赋值使用默认值
+    //int默认值为0
+    // var i int
+
+    // fmt.Println("i=", i)
+
+    //根据值自行判定变量类型
+    // var num = 10.11
+    // fmt.Println("num=", num)
+
+    //省略var
+    // name := "tom"
+    // fmt.Println("name=", name)
+
+    //多变量声明
+    // var n1, n2, n3 int
+    // fmt.Println("n1=", n1, "n2=", n2, "n3=", n3)
+
+    // var n1, name, n3 = 100, "tom", 888
+    // fmt.Println("n1=", n1, "name=", name, "n3=", n3)
+
+    // n1, name, n3 := 100, "tom", 888
+    // fmt.Println("n1=", n1, "name=", name, "n3=", n3)
+    fmt.Println("n1=", n1, "name=", name, "n2=", n2)
+    fmt.Println("n3=", n3, "name2=", name2, "n4=", n4)
+}
+
+```
+4、该区域的数据值可以在同一个类型范围内不断变化
+
+
+
+5、变量在同一个作用域（一个函数或者代码块）内不能重名
+
+
+6、变量=变量名+值+数据类型
+
+
+7、变量如果没有赋值，编译器会使用默认值
+int 默认值是0
+string 默认值是空串
+
+
+8、`:=` 结构不能使用在函数外。
+
+
+9、也可以使用new来创建变量
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	p := new(int)
+	fmt.Println("p addr =", p)
+	fmt.Println("p value=", *p)
+}
+
+```
+运行结果：
+```
+p addr = 0xc0000120b8
+p value= 0
+```
+
+
+关于数值例子：
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    //该区域的数据值可以在同一个类型范围内不断变化
+    var i int = 10
+    i = 20
+    i = 50
+    //i = 1.2
+
+    fmt.Println("i=", i)
+
+    //变量在同一个作用域（一个函数或者代码块）内不能重名
+    //var i int = 59
+    // i := 99
+
+    
+}
+```
+
+####  变量的生命周期
+
+栈空间
+堆空间
+
+如何判断变量是在栈空间还是在堆空间？
+
+垃圾回收器 gc
+
+-待补充
+
+
+#### 变量作用域
+
+1.**函数内部声明/定义的变量 叫局部变量，作用域仅限于函数内部**
+
+例子：
+```go
+package main
+
+import (
+    "fmt"
+)
+
+func test() {
+    //age和Name的作用域只在test函数内部
+    age := 10
+    Name := "tome"
+}
+
+func main() {
+    fmt.Println("age=", age) //undefined
+}
+
+```
+
+2.**函数外部声明/定义的变量 叫全局变量**
+
+作用域在整个包都有效，如果**`其首字母为大写`**，则作用域在整个程序有效
+
+
+utils/utils.go
+```go
+package utils
+
+var age int = 50
+var Name string = "jack"
+```
+
+main.go
+
+```go
+package main
+
+import (
+    "fmt"
+)
+
+var age int = 50
+var Name string = "jack"
+
+func test() {
+    //age和Name的作用域只在test函数内部
+    age := 10
+    Name := "tom"
+    fmt.Println("age=", age)   //10
+    fmt.Println("Name=", Name) //tom
+}
+
+func main() {
+    // fmt.Println("age=", age) //50
+    // fmt.Println("Name=", Name) //jack
+    // test()
+
+    fmt.Println("age=", utils.age)
+    fmt.Println("Name=", utils.Name)
+}
+```

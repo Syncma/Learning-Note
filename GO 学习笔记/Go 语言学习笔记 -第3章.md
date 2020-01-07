@@ -1,0 +1,256 @@
+# Go 语言学习笔记 -第3章
+
+[toc]
+
+## 基本数据类型
+
+数值型
+整数类型 
+int, int8（1字节）, int16（2字节）, int32（3字节）, int64（4字节）；
+
+int8范围： -2的七次方 到2的七次方 - 1
+xxxx
+xxx
+xxx
+
+uint, uint8, uint16, uint32, unit64, byte
+
+uint8范围：0 到2的8次方-1
+xxxx
+以此类推
+
+rune ~ 等价int32, 表示一个unicode
+
+byte  0~255
+
+
+
+浮点类型 float32, float64
+
+字符型：没有专门的字符型，**使用byte来保存单个字母字符**
+
+布尔型: bool
+
+字符串：string
+
+
+### 派生、复杂数据类型
+
+指针
+数组
+结构体
+管道
+函数
+切片
+接口
+map
+
+
+
+备注：
+
+1、查看某个变量的数据类型
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var n1 = 100
+	fmt.Printf("n1类型:%T", n1)
+
+}
+
+//n1类型:int
+```
+
+2、整型默认声明类型为int
+
+```go
+package main
+
+import (
+	"fmt"
+	"unsafe"
+)
+
+func main() {
+	var n1 = 100
+	fmt.Printf("n1 的 类型:%T, 占用的字节数:%d", n1, unsafe.Sizeof(n1))
+
+}
+
+//n1 的 类型:int, 占用的字节数:8
+
+```
+
+
+3、变量在使用时，尽量使用占用空间小的数据类型
+
+
+
+4、bit  计算机中的最小存储单位
+     byte 计算机中基本存储单元
+
+1 byte = 8 bit
+
+
+5、浮点数 = 符号位+指数位+尾数位  //**这怎么理解？**
+**浮点默认声明 `float64类型`**
+
+可能有精度损失？
+
+**`float64精度比float32更准确`**
+
+看一个例子：
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var price1 float32 = -123.0000901
+	var price2 float64 = -123.0000901
+
+	fmt.Println("price1=", price1) //price1= -123.00009
+	fmt.Println("price2=", price2) //price2= -123.0000901
+
+}
+
+```
+
+6.字符使用
+
+**如果保存的字符在ASCII表的， 比如[0-1, a-z, A-Z..] 直接保存到byte**
+
+**对应码值大于255， 可以考虑使用int类型**
+
+```go
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    //var price byte = '北'  //overflow溢出
+    var price int = '北'
+
+    fmt.Println("price=", price)  //返回97
+    fmt.Printf("price=%c", price) //返回a
+
+}
+```
+
+
+存储：字符->对应码值->二进制->存储
+读取： 二进制->码值->字符->读取
+
+**GO编码统一utf8**
+
+
+7、字符串是不可变的
+
+```go
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    var str = "hello world"
+    str[0] = 'a' //报错
+
+    fmt.Println("str=", str)
+
+}
+```
+
+
+字符串的表示方式
+
+1）双引号， 会识别转义字符
+
+2）反引号， 以字符串的原生形式输出，包括换行和特殊字符
+
+```go
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    str := "hello\nworld"
+    fmt.Println("str=", str)
+
+    str1 := `
+    package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    str := "hello\nworld"
+    fmt.Println("str=", str)
+    `
+    fmt.Println("str1=", str1)
+
+}
+
+```
+
+
+字符串拼接：
+
+```go
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    str := "hello\nworld" +
+        "你好"
+
+    fmt.Println("str=", str)
+
+}
+```
+
+
+[go语言中int和byte转换](https://studygolang.com/articles/16154)
+
+
+
+判断进制存储：
+
+```go
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func main() {
+	n := int64(123)
+
+	fmt.Println(strconv.FormatInt(n, 2)) //1111011
+}
+```
+
+
+
+
+
+
+
+

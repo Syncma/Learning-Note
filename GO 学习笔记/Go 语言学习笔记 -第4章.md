@@ -1,0 +1,452 @@
+# Go 语言学习笔记 -第4章
+
+[toc]
+## 复合数据类型
+
+### 数组
+
+Golang中操作数组或者序列化数据需要用到slice，程序中写作“[]"
+
+slice 指向数组的值，并且同时包含了长度信息
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+
+	// list := []int{1, 2, 3, 4}
+	list := [...]int{1, 2, 3, 4}
+	fmt.Println(list)
+	fmt.Printf("Type %T\n", list)
+
+	for i := 0; i < len(list); i++ {
+		fmt.Printf("list[%d]=%d\n", i, list[i])
+	}
+
+	//重新切片s[low:high], low->(high-1)
+	fmt.Println(list[1:1]) //[]
+	fmt.Println(list[0:3]) //[1 2 3]
+	fmt.Println(list[:2])  //[1 2]
+	fmt.Println(list[1:])  //[2 3 4]
+	fmt.Println(list[:0])  //[]
+
+}
+
+
+```
+
+### 切片slice
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	//使用make进行声明切片
+	list := make([]int, 5)
+	fmt.Println("list=", list)                        //list= [0 0 0 0 0]
+	fmt.Printf("len=%d,cap=%d", len(list), cap(list)) //len=5,cap=5
+
+}
+
+```
+
+切片长度和容量,长度为5,容量为5
+默认情况下长度和容量是一样的
+
+**怎么理解长度和容量？**
+
+>切片的长度就是它所包含的元素个数。
+>
+>切片的容量是从它的第一个元素开始数，到其底层数组元素末尾的个数。
+
+
+
+再看一个例子：
+```go
+package main
+
+import "fmt"
+
+func main() {
+
+    aSlice := []int{1, 2, 3, 4, 5}
+    fmt.Printf("before aSlice length=%d,cap=%d,self=%v\n", len(aSlice), cap(aSlice), aSlice)
+    //before aSlice length=5,cap=5,self=[1 2 3 4 5]
+
+    aSlice = append(aSlice, 6)
+    fmt.Printf("after aSlice length=%d,cap=%d,self=%v\n", len(aSlice), cap(aSlice), aSlice)
+    //after aSlice length=6,cap=10,self=[1 2 3 4 5 6]
+
+    //这里如何理解？加入一个元素，但是容量增加了一倍？并没有变成6?
+    bSlice := make([]int, 5, 10)
+    bSlice[0] = 1
+    bSlice[1] = 2
+    bSlice[2] = 3
+    bSlice[3] = 5
+    bSlice[4] = 6
+    fmt.Printf("before bSlice length=%d,cap=%d,self=%v\n", len(bSlice), cap(bSlice), bSlice)
+    //before bSlice length=5,cap=10,self=[1 2 3 5 6]
+
+    bSlice = append(bSlice, 6)
+    fmt.Printf("after bSlice length=%d,cap=%d,self=%v\n", len(bSlice), cap(bSlice), bSlice)
+    //after bSlice length=6,cap=10,self=[1 2 3 5 6 6]
+
+    // list := make([]int, 3, 5)
+    // fmt.Println(len(list), cap(list))
+    // list[0] = 1
+    // list[1] = 2
+    // list[2] = 3
+    // // list[3] = 4
+    // fmt.Println(len(list), cap(list))
+    // fmt.Println("list=", list)
+}
+
+```
+
+
+如果我们最开始 slice 的容量是 10，长度是 5 ，那么再加一个元素是不会改变切片的容量的。
+
+也就是说，当我们往 slice中增加元素超过原来的容量时，slice 会自增容量，
+
+当现有长度 < 1024 时 cap 增长是翻倍的，当超过 1024，cap 的增长是 1.25 倍增长
+
+可以查看slice.go源码
+
+下面几个链接地址可以看看：
+
+[链接1](https://www.jianshu.com/p/facd013dff91)
+
+[链接2](https://blog.csdn.net/u013474436/article/details/88770501)
+
+[链接3](https://qcrao.com/2019/04/02/dive-into-go-slice/)
+
+
+
+### map散列
+
+1.map 的作用类似哈希表或者python里面的字典
+
+
+基本语法：
+```
+var map 变量名  map[keytype] valuetype
+
+valuetype的类型和key基本一样：
+通常为: 数字、string、map、struct
+```
+
+注意：
+
+>声明式不会分配内存的，初始化需要make,分配内存后才能赋值和使用
+
+
+例子：
+```go
+package main
+
+import "fmt"
+
+func main() {
+	//map声明
+	var a map[string]string
+	a = make(map[string]string)
+
+	//上面两行也可以写成一行 a := make(map[string]string)
+	//在使用map前,需要先make, make的作用是给map分配数据空间
+	//key不能重复，如果重复了以最后一个为准
+	//值是可以重复的
+	//key-value是无序的, 也就是print没有顺序
+
+	//这里如果值写的是整数类型而不是字符串类型，就会报错-----强判断型
+	a["no1"] = "AA"
+	a["no2"] = "BB"
+	a["no1"] = "CC"
+	a["no3"] = "DD"
+	fmt.Println(a)
+
+}
+
+```
+
+2.map三种方式
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    //第一种方式
+    // var a map[string]string
+    // a = make(map[string]string, 10)
+
+    //第二种方式
+    // a := make(map[string]string)
+    // a["no1"] = "AA"
+    // a["no2"] = "BB"
+    // a["no1"] = "CC"
+    // a["no3"] = "DD"
+
+    //第三种方式
+    a := map[string]string{
+        "no1": "AA",
+        "no2": "BB",
+    }
+
+    fmt.Println("a=", a)
+
+}
+```
+
+
+3.map的使用
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+
+    a := make(map[string]string)
+    a["no1"] = "AA"
+    a["no2"] = "BB"
+    a["no1"] = "CC"
+    a["no3"] = "DD"
+
+    //删除
+    // delete(a, "no1")
+
+    //删除不存在的key,删除不会操作，也不会报错
+    // delete(a, "no4")
+
+    //一次性删除所有key
+    // a = make(map[string]string)
+
+    //查询key
+    val, ok := a["no6"]
+    if ok {
+        fmt.Println("no1=", val)
+    } else {
+        fmt.Println("没有key")
+    }
+
+}
+```
+
+4.map遍历
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+
+    a := make(map[string]string)
+    a["no1"] = "AA"
+    a["no2"] = "BB"
+    a["no1"] = "CC"
+    a["no3"] = "DD"
+
+    //遍历map
+    // for k, v := range a {
+    //  fmt.Printf("k=%v, v=%v\n", k, v)
+    // }
+
+    //长度
+    fmt.Println("length:", len(a))
+
+}
+```
+
+
+5.map切片
+```go
+package main
+
+import "fmt"
+
+func main() {
+
+    a := make([]map[string]string, 2)
+
+    if a[0] == nil {
+        a[0] = make(map[string]string, 2)
+        a[0]["no1"] = "AA"
+        a[0]["no2"] = "BB"
+    }
+
+    if a[1] == nil {
+        a[1] = make(map[string]string, 2)
+        a[1]["no1"] = "CC"
+        a[1]["no2"] = "DD"
+    }
+
+    // if a[2] == nil {
+    //  a[2] = make(map[string]string, 2)
+    //  a[2]["no1"] = "EE"
+    //  a[2]["no2"] = "FF"
+    // }
+
+    //动态增加
+    newa := map[string]string{
+        "no1": "111",
+        "no2": "22",
+    }
+
+    a = append(a, newa)
+
+    fmt.Println("a:", a)
+
+}
+
+
+```
+
+### 结构体
+
+**`Golang没有class,  用结构体来实现class特征`**
+
+去掉了传统OOP的继承、方法重载、构造函数、析构函数、隐藏的this指针等
+
+具体继承、封装、多态，只是实现方式跟其他OOP语言不一样
+
+1.结构体例子
+```go
+package main
+
+import "fmt"
+
+//结构体
+type Cat struct {
+    Name  string
+    Age   int
+    Color string
+}
+
+func main() {
+
+    var cat1 Cat
+    //访问结构体变量，直接用.符号连接
+	//结构体可以給部分成员赋值
+    cat1.Name = "小白"
+    cat1.Age = 3
+    cat1.Color = "白色"
+    fmt.Println("cat1=", cat1)
+
+}
+```
+
+2.结构体与slice map
+
+```go
+package main
+
+import "fmt"
+
+//结构体
+type Cat struct {
+    Name  string
+    Age   int
+    Color string
+    ptr   *int
+    slice []int
+    map1  map[string]string
+}
+
+func main() {
+
+    var cat1 Cat
+    cat1.Name = "小白"
+    cat1.Age = 3
+    cat1.Color = "白色"
+
+    //使用slice要先make
+    cat1.slice = make([]int, 10)
+    cat1.slice[0] = 100
+
+    //使用map要先make
+    cat1.map1 = make(map[string]string)
+    cat1.map1["key1"] = "tom"
+    fmt.Println("cat1=", cat1)
+
+}
+```
+
+
+3.结构体赋值
+
+```go
+package main
+
+import "fmt"
+
+//结构体
+type Monster struct {
+	Name string
+	Age  int
+}
+
+func main() {
+
+	var monster1 Monster
+	monster1.Name = "牛魔王"
+	monster1.Age = 500
+
+	monster2 := monster1 //默认是值拷贝
+	monster2.Name = "狐狸精"
+
+	fmt.Printf("monster1=%v, monster2=%v", monster1, monster2)
+	//monster1={牛魔王 500}, monster2={狐狸精 500}
+
+}
+
+```
+
+
+```go
+package main
+
+import "fmt"
+
+//结构体
+type Monster struct {
+    Name string
+    Age  int
+}
+
+func main() {
+
+    //方法1
+    // var monster1 Monster
+    // monster1 := Monster{}
+    // monster1.Name = "牛魔王"
+    // monster1.Age = 500
+
+    //方法2
+    // monster1 := Monster{"牛魔王", 500}
+
+    //方法3
+    var p3 *Monster = new(Monster)
+    (*p3).Name = "牛魔王"
+    (*p3).Age = 500
+
+    //(*p3).Name也可以写成p3.Name = "xxx"
+    p3.Name = "狐狸精"
+    p3.Age = 100
+
+    //方法4, 通过指针进行获取
+    var monster *Monster = &Monster{}
+    (*monster).Name = "玉兔精"
+    // monster.Name = "XX"
+
+    fmt.Printf("monster1=%v", monster)
+
+}
+
+```
