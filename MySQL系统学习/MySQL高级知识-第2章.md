@@ -1,4 +1,4 @@
-# MySQL高级知识-Day2
+# MySQL高级知识-第2章
 
 [toc]
 
