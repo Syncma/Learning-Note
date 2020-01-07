@@ -16,9 +16,8 @@ requests是一个Python的网络请求库，和urllib、httplib之流相比起�
 
 ## 分析环境
 
-系统：Linux -Fedora 29 x64
-开发工具: vscode
 Requests版本： V2.20.0
+
 python版本: 3.6.7
 
 [git下载地址](https://github.com/psf/requests)
@@ -39,8 +38,8 @@ python版本: 3.6.7
 [jian@laptop requests]$ cloc --include-lang=Python .
 ```
 
-| Language      |     files |   blank   | comment | code
-| :-------- | --------:| :------: |
+| Language | files | blank  | comment | code
+| :-------- | --------:| :------: |:------: |:------: |
 | Python    |   35 |  1951  | 1990 |5937|
 
 <br>
@@ -240,7 +239,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 <br>
 
-#####httpbin
+##### httpbin
 
 终于要解决这个东西了，这个东西是啥呢？
 <br>
