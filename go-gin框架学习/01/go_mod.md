@@ -1,24 +1,10 @@
-# GO gin框架学习笔记-Day1
+# go mod
 
 [toc]
 
 
-## Gin是什么
 
-Gin 是一个用 Go (Golang) 编写的 HTTP web 框架。 
-
-它是一个类似于 martini 但拥有更好性能的 API 框架, 由于 httprouter，速度提高了近 40 倍。
-
-## 开发环境
-
-环境介绍：
-```
-go版本： v1.13.1
-编辑器：vscode
-采用 Go Modules 进行管理
-```
-
-### 题外话-go mod
+## 题外话-go mod
   go mod 是Golang 1.11 版本引入的官方包（package）依赖管理工具，用于解决之前没有地方记录依赖包具体版本的问题，方便依赖包的管理。
 
 之前Golang 主要依靠vendor和GOPATH来管理依赖库，vendor相对主流，
@@ -156,21 +142,6 @@ go 会自动生成一个 go.sum 文件来记录 dependency tree
 
 [Go mod用法指南](http://wjp2013.github.io/go/go-module/)
 
-
-
-
-## 设计阶段
-
-### REST VS RPC
-
-普遍采用的做法是，内部系统之间调用用 RPC，对外用 REST，因为内部系统之间可能调用很频繁，需要 RPC 的高性能支撑。对外用 REST 更易理解，更通用些。
-
-
-Go 语言中常用的 API 风格是 RPC 和 REST，常用的媒体类型是 JSON、XML 和 Protobuf。
-
-在 Go API 开发中常用的组合是 gRPC + Protobuf 和 REST + JSON。
-
-这里使用**REST+JSON**方式进行开发
 
 
 ###  GOPATH VS GOROOT
