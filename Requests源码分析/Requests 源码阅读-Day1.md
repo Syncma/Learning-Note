@@ -38,9 +38,9 @@ python版本: 3.6.7
 [jian@laptop requests]$ cloc --include-lang=Python .
 ```
 
-| Language | files | blank  | comment | code
-| :-------- | --------:| :------: |:------: |:------: |
-| Python    |   35 |  1951  | 1990 |5937|
+| Language | files | blank | comment | code  |
+| :------- | ----: | :---: | :-----: | :---: |
+| Python   |    35 | 1951  |  1990   | 5937  |
 
 <br>
 
@@ -440,6 +440,6 @@ def httpbin(request):
 
 总结：
 
-![Alt text](./httpbin.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/httpbin.png)
 
 
