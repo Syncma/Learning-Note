@@ -132,7 +132,7 @@ python -OO -m py_compile demo.py
 
 到pycache目录看到生成了cpython-36.opt-1.pyc文件
 
-![Alt text](./1578027718663.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/1578027718663.png)
 
 我们发现下面的结果：
 
@@ -173,4 +173,4 @@ python -OO -m py_compile demo.py
 
 ## python程序执行原理
 
-![Alt text](./1578032890559.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/1578032890559.png)
