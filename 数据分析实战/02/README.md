@@ -2,9 +2,9 @@
 
 ### 笔记
 
-![最佳路径](./bestPath.png)
+![最佳路径](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/bestPath.png)
 
 ## 思维导图
 
-![思维导图](./bestPathMind.png)
+![思维导图](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/bestPathMind.png)
 
