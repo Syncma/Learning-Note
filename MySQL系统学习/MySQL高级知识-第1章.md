@@ -41,7 +41,7 @@ FLUSH PRIVILEGES;
 
 ## 逻辑架构
 
-![Alt text](./逻辑架构.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/逻辑架构.png)
 
 
 架构详细描述：
@@ -70,7 +70,7 @@ MySQL大多数核心服务均在中间这一层，包括查询解析、分析、
 
 当向MySQL发送一个请求的时候，MySQL到底做了些什么呢？
 
-![Alt text](./查询过程.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/查询过程.png)
 
 
 ### 查询缓存

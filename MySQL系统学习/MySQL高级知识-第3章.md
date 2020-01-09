@@ -16,7 +16,7 @@ Index-**索引是帮助MySQL高效获取数据的`数据结构`**，可以理解
 在数据之外，数据库系统还维护着满足特定查找算法的数据结构，这些数据结构以某种方式引用（指向）数据，这种数据结构就是索引。
 
 
-![Alt text](./1578113695132.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/1578113695132.png)
 
 
 2. 索引的目的
@@ -49,7 +49,7 @@ Index-**索引是帮助MySQL高效获取数据的`数据结构`**，可以理解
 
 要理解B树，必须从二叉查找树（Binary search tree）讲起
 
-![Alt text](./二叉树.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/二叉树.png)
 
 
 二叉查找树是一种查找效率非常高的数据结构，它有三个特点。
@@ -75,7 +75,7 @@ B树是对二叉查找树的改进。
 
 
 
-![Alt text](./B树.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/B树.png)
 
 
 B树的特点也有三个。
@@ -123,7 +123,7 @@ B+树是基于B-树的一种变体，有着比B-树更高的查询性能
 
 如图所示：
 
-![Alt text](./1578287413276.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/1578287413276.png)
 
 
 

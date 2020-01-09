@@ -27,7 +27,7 @@ mysql> show table status like 'user' \G    //查看user表
 
 ### MyISAM 与InnoDB关系
 
-![Alt text](./数据库引擎.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/数据库引擎.png)
 
 
 总结：
