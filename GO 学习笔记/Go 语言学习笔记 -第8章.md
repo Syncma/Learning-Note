@@ -141,7 +141,7 @@ test () hello world10
 
 可以画个逻辑图来说明这个情况：
 
-![Alt text](./逻辑图.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/逻辑图.png)
 
 
 
@@ -551,7 +551,7 @@ func main() {
 ### 协程和管道
 
 
-![Alt text](./协程与管道.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/协程与管道.png)
 
 看一个例子：
 ```go
@@ -613,7 +613,7 @@ func main() {
 
 再看一个例子：
 
-![Alt text](./思路分析.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/思路分析.png)
 
 ```go
 package main

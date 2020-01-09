@@ -44,7 +44,7 @@
 **`golang的计算能力强`**
 
 
-![Alt text](./go知识图谱.jpg)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/go知识图谱.jpg)
 
 
 ## 如何学习
