@@ -12,6 +12,7 @@ Machine项目是Docker官方的开源项目，负责实现对Docker运行环境�
 
 
 [参考地址1](https://www.dongwm.com/post/docker-machine-and-swarm/)
+
 [参考地址2](http://dockone.io/article/275)
 
 

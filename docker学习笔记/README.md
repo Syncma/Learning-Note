@@ -25,7 +25,7 @@
      - [04丨 Docker Compose 学习笔记 ](./Compose.md)
      - [05丨 Docker Swarm 学习笔记 ](./Swarm.md)
      - [06丨 Docker Mesos 学习笔记 ](./Mesos.md)
-     - [07丨 k8s ](./k8s.md)
+     - [07丨 k8s ](./K8S.md)
      - [08丨 容器监控 ](./容器监控.md)
 
 
