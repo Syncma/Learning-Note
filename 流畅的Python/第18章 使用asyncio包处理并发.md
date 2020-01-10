@@ -1,6 +1,20 @@
 # 第18章 使用asyncio包处理并发
 
-[toc]
+<!-- TOC -->
+
+- [第18章 使用asyncio包处理并发](#第18章-使用asyncio包处理并发)
+    - [主线程与子线程](#主线程与子线程)
+    - [守护线程](#守护线程)
+    - [线程同步](#线程同步)
+    - [asyncio介绍](#asyncio介绍)
+        - [关键组件说明](#关键组件说明)
+        - [回调](#回调)
+    - [asyncio与gevent关系](#asyncio与gevent关系)
+    - [asyncio与Flask](#asyncio与flask)
+        - [aiohttp](#aiohttp)
+        - [与单进程、多进程对比](#与单进程多进程对比)
+
+<!-- /TOC -->
 
 
 ## 主线程与子线程
@@ -330,7 +344,7 @@ print('Task Result:', task.result())
 
 ```
 
-##asyncio与gevent关系
+## asyncio与gevent关系
 
 
 gevent是第三方库，通过greenlet实现协程
@@ -563,7 +577,7 @@ Cost time: 301.17162680625916
 多进程版本：
 
 
-```
+```python
 import requests
 import time
 import multiprocessing
@@ -597,5 +611,7 @@ Cost time: 48.85933017730713
 
 
 这里想查看cpu个数也可以使用：
-> import psutil
-> psutil.cpu_count()
+```python
+ import psutil
+ psutil.cpu_count()
+```

@@ -1,6 +1,16 @@
 # 第24章 python命名空间
 
-[toc]
+<!-- TOC -->
+
+- [第24章 python命名空间](#%e7%ac%ac24%e7%ab%a0-python%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4)
+  - [内置命令空间](#%e5%86%85%e7%bd%ae%e5%91%bd%e4%bb%a4%e7%a9%ba%e9%97%b4)
+  - [全局命名空间](#%e5%85%a8%e5%b1%80%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4)
+  - [局部命名空间](#%e5%b1%80%e9%83%a8%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4)
+  - [区别](#%e5%8c%ba%e5%88%ab)
+  - [func函数内存地址](#func%e5%87%bd%e6%95%b0%e5%86%85%e5%ad%98%e5%9c%b0%e5%9d%80)
+  - [NotImplementedError](#notimplementederror)
+
+<!-- /TOC -->
 
 ## 内置命令空间
 

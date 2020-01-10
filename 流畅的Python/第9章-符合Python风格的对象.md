@@ -1,6 +1,12 @@
 # 第9章-符合Python风格的对象
 
-[toc]
+<!-- TOC -->
+
+- [第9章-符合Python风格的对象](#%e7%ac%ac9%e7%ab%a0-%e7%ac%a6%e5%90%88python%e9%a3%8e%e6%a0%bc%e7%9a%84%e5%af%b9%e8%b1%a1)
+  - [format表示法](#format%e8%a1%a8%e7%a4%ba%e6%b3%95)
+  - [__slots__方法](#slots%e6%96%b9%e6%b3%95)
+
+<!-- /TOC -->
 
 ## format表示法
 
@@ -59,7 +65,8 @@ print(person.__dict__)  # {'name': 'tony', 'age': 'jacky', 'gender': 'male'}
 
 简单点理解:
 
-> `__slots_`_存在的价值在于删除`__dict__`属性，从而来**优化类实例对内存的需求**。
+ `__slots_`_存在的价值在于删除`__dict__`属性，从而来**优化类实例对内存的需求**。
+ 
 而这带来的副作用就是：由于缺少了`__dict__`，类实例木有办法再自由添加属性了！
 
 
@@ -102,7 +109,7 @@ person.gender = 'male'  # AttributeError: 'Person' object has no attribute 'gend
 
 我们也可以自己测试下结果：
 
-```
+```python
 # 使用 profile 进行性能分析
 import profile
 

@@ -1,6 +1,16 @@
 # 第22章 python字节码-补充内容
 
-[toc]
+<!-- TOC -->
+
+- [第22章 python字节码-补充内容](#%e7%ac%ac22%e7%ab%a0-python%e5%ad%97%e8%8a%82%e7%a0%81-%e8%a1%a5%e5%85%85%e5%86%85%e5%ae%b9)
+  - [python编译过程](#python%e7%bc%96%e8%af%91%e8%bf%87%e7%a8%8b)
+    - [py文件](#py%e6%96%87%e4%bb%b6)
+      - [__pycache__](#pycache)
+      - [pyc文件](#pyc%e6%96%87%e4%bb%b6)
+      - [pyo文件](#pyo%e6%96%87%e4%bb%b6)
+  - [python程序执行原理](#python%e7%a8%8b%e5%ba%8f%e6%89%a7%e8%a1%8c%e5%8e%9f%e7%90%86)
+
+<!-- /TOC -->
 
 
 

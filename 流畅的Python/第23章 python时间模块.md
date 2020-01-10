@@ -1,7 +1,16 @@
 # 第23章 python时间模块
 
 
-[toc]
+<!-- TOC -->
+
+- [第23章 python时间模块](#%e7%ac%ac23%e7%ab%a0-python%e6%97%b6%e9%97%b4%e6%a8%a1%e5%9d%97)
+  - [time 模块](#time-%e6%a8%a1%e5%9d%97)
+  - [datetime模块](#datetime%e6%a8%a1%e5%9d%97)
+  - [字符串转换成datetime类型](#%e5%ad%97%e7%ac%a6%e4%b8%b2%e8%bd%ac%e6%8d%a2%e6%88%90datetime%e7%b1%bb%e5%9e%8b)
+  - [datetime转换成字符串类型](#datetime%e8%bd%ac%e6%8d%a2%e6%88%90%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%b1%bb%e5%9e%8b)
+  - [时间戳转string](#%e6%97%b6%e9%97%b4%e6%88%b3%e8%bd%acstring)
+
+<!-- /TOC -->
 
 
 ## time 模块
