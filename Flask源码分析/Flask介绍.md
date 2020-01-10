@@ -1,6 +1,26 @@
 # Flask介绍
 
-[toc]
+<!-- TOC -->
+
+- [Flask介绍](#flask介绍)
+    - [什么是Flask](#什么是flask)
+    - [应用场景](#应用场景)
+    - [特征](#特征)
+    - [两大组件](#两大组件)
+        - [Jinja2](#jinja2)
+        - [Werkzeug](#werkzeug)
+            - [Werkzeug优点](#werkzeug优点)
+            - [Werkzeug使用](#werkzeug使用)
+    - [Flask安装](#flask安装)
+    - [组件内部逻辑](#组件内部逻辑)
+    - [生产环境部署](#生产环境部署)
+    - [与其他框架比较优缺点](#与其他框架比较优缺点)
+    - [Flask很重要的几个概念](#flask很重要的几个概念)
+        - [路由](#路由)
+        - [蓝图](#蓝图)
+        - [ORM框架](#orm框架)
+
+<!-- /TOC -->
 
 
 ## 什么是Flask
@@ -87,7 +107,7 @@ pip install flask
 
 2.简单例子
 
-```
+```python
 from flask import Flask
 app = Flask(__name__)
 
@@ -168,7 +188,7 @@ Flask 强于 Bottle
 
 ## Flask很重要的几个概念
 
-###路由
+### 路由
 
 所谓路由，就是处理URL和函数之间关系的程序，Flask中也是对URL规则进行统一管理的，使用@app.route修饰器将一个函数注册为路由。
 
