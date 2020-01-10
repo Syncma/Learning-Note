@@ -1,7 +1,19 @@
 # Requests 源码阅读-Day1
 
 
-[toc]
+<!-- TOC -->
+
+- [Requests 源码阅读-Day1](#requests-%e6%ba%90%e7%a0%81%e9%98%85%e8%af%bb-day1)
+  - [Requests介绍](#requests%e4%bb%8b%e7%bb%8d)
+  - [分析环境](#%e5%88%86%e6%9e%90%e7%8e%af%e5%a2%83)
+  - [源码分析](#%e6%ba%90%e7%a0%81%e5%88%86%e6%9e%90)
+    - [单元测试](#%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95)
+      - [test_requests.py](#testrequestspy)
+        - [digest_auth_algo](#digestauthalgo)
+        - [HTTPDigestAuth](#httpdigestauth)
+        - [httpbin](#httpbin)
+
+<!-- /TOC -->
 
 
 ## Requests介绍
@@ -436,10 +448,5 @@ def httpbin(request):
 这里的httpbin_app是pytest-httpbin下app模块的别称，该模块是专门用于http测试而编写的web应用程序，这里就不扩展了。
 
 然后server继续调用start()方法，启动线程，开启WSGI服务器，最后返回server。
-
-
-总结：
-
-![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/httpbin.png)
 
 

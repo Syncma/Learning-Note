@@ -1,6 +1,28 @@
 # pytest 学习笔记
 
-[toc]
+<!-- TOC -->
+
+- [pytest 学习笔记](#pytest-%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0)
+  - [pytest是什么](#pytest%e6%98%af%e4%bb%80%e4%b9%88)
+  - [pytest使用](#pytest%e4%bd%bf%e7%94%a8)
+  - [简单例子](#%e7%ae%80%e5%8d%95%e4%be%8b%e5%ad%90)
+  - [常用的pytest第三方插件](#%e5%b8%b8%e7%94%a8%e7%9a%84pytest%e7%ac%ac%e4%b8%89%e6%96%b9%e6%8f%92%e4%bb%b6)
+    - [pytest-sugar](#pytest-sugar)
+    - [pytest-assume](#pytest-assume)
+    - [pytest-ordering](#pytest-ordering)
+  - [pytest参数化](#pytest%e5%8f%82%e6%95%b0%e5%8c%96)
+  - [pytest执行级别](#pytest%e6%89%a7%e8%a1%8c%e7%ba%a7%e5%88%ab)
+    - [setup_module 模块级别](#setupmodule-%e6%a8%a1%e5%9d%97%e7%ba%a7%e5%88%ab)
+    - [setup_class 类级别](#setupclass-%e7%b1%bb%e7%ba%a7%e5%88%ab)
+    - [setup_function 函数级别](#setupfunction-%e5%87%bd%e6%95%b0%e7%ba%a7%e5%88%ab)
+  - [fixture](#fixture)
+    - [fixture函数作用](#fixture%e5%87%bd%e6%95%b0%e4%bd%9c%e7%94%a8)
+    - [fixture 参数](#fixture-%e5%8f%82%e6%95%b0)
+      - [函数级别](#%e5%87%bd%e6%95%b0%e7%ba%a7%e5%88%ab)
+      - [模块级别](#%e6%a8%a1%e5%9d%97%e7%ba%a7%e5%88%ab)
+  - [webtest](#webtest)
+
+<!-- /TOC -->
 
 ## pytest是什么
 
@@ -241,10 +263,14 @@ def test_three():
 
 ### fixture 参数
 
->scope参数
+scope参数
+
 scope=function：每个test都运行，默认是function的scope
+
 scope=class：每个class的所有test只运行一次
+
 scope=module：每个module的所有test只运行一次
+
 scope=session：每个session只运行一次
 
 

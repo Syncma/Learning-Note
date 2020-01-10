@@ -1,6 +1,17 @@
 # Requests 源码阅读-Day2
 
-[toc]
+<!-- TOC -->
+
+- [Requests 源码阅读-Day2](#requests-%e6%ba%90%e7%a0%81%e9%98%85%e8%af%bb-day2)
+  - [get方法](#get%e6%96%b9%e6%b3%95)
+  - [request](#request)
+  - [Session](#session)
+    - [Session.__enter__](#sessionenter)
+    - [Session.__init__](#sessioninit)
+      - [问题1](#%e9%97%ae%e9%a2%981)
+      - [问题2](#%e9%97%ae%e9%a2%982)
+
+<!-- /TOC -->
 ## get方法
 
 再来看这个文件：

@@ -1,6 +1,15 @@
 # Requests 源码阅读-Day4
 
-[toc]
+<!-- TOC -->
+
+- [Requests 源码阅读-Day4](#requests-%e6%ba%90%e7%a0%81%e9%98%85%e8%af%bb-day4)
+  - [adapters](#adapters)
+    - [self.mount](#selfmount)
+    - [HTTPAdapter](#httpadapter)
+    - [PoolManager](#poolmanager)
+    - [总结](#%e6%80%bb%e7%bb%93)
+
+<!-- /TOC -->
 
 ## adapters
 

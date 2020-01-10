@@ -1,6 +1,14 @@
 # Requests 源码阅读-Day3
 
-[toc]
+<!-- TOC -->
+
+- [Requests 源码阅读-Day3](#requests-%e6%ba%90%e7%a0%81%e9%98%85%e8%af%bb-day3)
+  - [hooks](#hooks)
+    - [hooks初始化](#hooks%e5%88%9d%e5%a7%8b%e5%8c%96)
+    - [hooks使用](#hooks%e4%bd%bf%e7%94%a8)
+  - [cookies](#cookies)
+
+<!-- /TOC -->
 
 ## hooks
 
