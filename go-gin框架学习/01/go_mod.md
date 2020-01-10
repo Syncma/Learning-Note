@@ -1,6 +1,15 @@
 # go mod
 
-[toc]
+<!-- TOC -->
+
+- [go mod](#go-mod)
+	- [题外话-go mod](#%e9%a2%98%e5%a4%96%e8%af%9d-go-mod)
+			- [配置](#%e9%85%8d%e7%bd%ae)
+			- [例子](#%e4%be%8b%e5%ad%90)
+			- [特点](#%e7%89%b9%e7%82%b9)
+		- [GOPATH VS GOROOT](#gopath-vs-goroot)
+
+<!-- /TOC -->
 
 
 

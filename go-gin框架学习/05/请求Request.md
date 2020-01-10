@@ -1,6 +1,14 @@
 # 请求Request
 
-[toc]
+<!-- TOC -->
+
+- [请求Request](#%e8%af%b7%e6%b1%82request)
+	- [请求头](#%e8%af%b7%e6%b1%82%e5%a4%b4)
+	- [请求参数](#%e8%af%b7%e6%b1%82%e5%8f%82%e6%95%b0)
+	- [Cookies](#cookies)
+	- [上传文件](#%e4%b8%8a%e4%bc%a0%e6%96%87%e4%bb%b6)
+
+<!-- /TOC -->
 
 ## 请求头
 
@@ -115,15 +123,15 @@ func DelHandler(c *gin.Context) {
 
 SetCookie参数说明：
 
-| 参数名    |     类型|   说明  |
-| :-------- | --------:| :------: |
-| name    |   string |  cookie名字  |
-| value	  |   string |  cookie值  |
-| maxAge  |   int	|  有效时间，单位是秒，MaxAge=0 忽略MaxAge属性，MaxAge<0 相当于删除cookie, 通常可以设置-1代表删除，MaxAge>0 多少秒后cookie失效  |
-| path	    |   string |  cookie路径  |
-| domain	|   string |  cookie作用域  |
-| secure	|   bool	|  Secure=true，那么这个cookie只能用https协议发送给服务器  |
-| httpOnly	|   bool| 设置HttpOnly=true的cookie不能被js获取到  |
+| 参数名   |   类型 |                                                            说明                                                             |
+| :------- | -----: | :-------------------------------------------------------------------------------------------------------------------------: |
+| name     | string |                                                         cookie名字                                                          |
+| value    | string |                                                          cookie值                                                           |
+| maxAge   |    int | 有效时间，单位是秒，MaxAge=0 忽略MaxAge属性，MaxAge<0 相当于删除cookie, 通常可以设置-1代表删除，MaxAge>0 多少秒后cookie失效 |
+| path     | string |                                                         cookie路径                                                          |
+| domain   | string |                                                        cookie作用域                                                         |
+| secure   |   bool |                                   Secure=true，那么这个cookie只能用https协议发送给服务器                                    |
+| httpOnly |   bool |                                           设置HttpOnly=true的cookie不能被js获取到                                           |
 
 
 		
