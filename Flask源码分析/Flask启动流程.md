@@ -90,7 +90,7 @@ def __init__(
 我们知道：
 >1.python文件的后缀为.py
 >
->2..py文件既可以用来直接执行，就像一个小程序一样，也可以用来作为模块被导入
+>2.py文件既可以用来直接执行，就像一个小程序一样，也可以用来作为模块被导入
 >
 >3.在python中导入模块一般使用的是import
 
@@ -231,7 +231,7 @@ class _PackageBoundObject(object):
 
 再回到flask 这边往下看代码：
 
-```
+```python
 class Flask(_PackageBoundObject):
 ...
         _PackageBoundObject.__init__(
