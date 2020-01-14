@@ -29,7 +29,7 @@
 | [#14](https://github.com/Syncma/learning-note/issues/14) | 微服务学习笔记        | 2020-01-13 | 进行中   |
 | [#15](https://github.com/Syncma/learning-note/issues/15) | 数据结构学习          | 2020-01-14 | 未开始   |
 | [#16](https://github.com/Syncma/learning-note/issues/16) | 算法学习              | 2020-01-14 | 未开始   |
-| [#17](https://github.com/Syncma/learning-note/issues/17) | Odoo学习              | 2020-01-14 | 未开始   |
+| [#17](https://github.com/Syncma/learning-note/issues/17) | Odoo学习              | 2020-01-14 | 进行中   |
 | [#18](https://github.com/Syncma/learning-note/issues/17) | ELK学习               | 2020-01-14 | 未开始   |
 | [#19](https://github.com/Syncma/learning-note/issues/17) | Scrapy学习            | 2020-01-14 | 未开始   |
 | [#20](https://github.com/Syncma/learning-note/issues/17) | Tornado学习           | 2020-01-14 | 未开始   |
