@@ -1,5 +1,13 @@
 # 个人学习笔记整理跟踪
-记录学习笔记
+
+
+[![](https://img.shields.io/github/issues/Syncma/Learning-note.svg)](https://github.com/Syncma/Learning-note/issues)  [![](https://img.shields.io/github/forks/Syncma/Learning-note.svg)](https://github.com/Syncma/Learning-note) [![](https://img.shields.io/github/stars/Syncma/Learning-note)](https://github.com/Syncma/Learning-note) ![](https://img.shields.io/badge/%E8%AF%84%E5%88%86-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%85-brightgreen.svg)
+
+
+我会将这么多年的工作经验分享给大家，
+如果你想就这些文章进行交流和讨论，欢迎在 issue 中评论。
+> 也欢迎大家入群交流，我的微信: 515618367，请备注：姓名+公司+Github。
+
 
 
 ## Reading List
