@@ -12,6 +12,7 @@
       - [含义](#%e5%90%ab%e4%b9%89)
       - [测试](#%e6%b5%8b%e8%af%95)
   - [5. Systemd](#5-systemd)
+  - [备注](#%e5%a4%87%e6%b3%a8)
 
 <!-- /TOC -->
 
@@ -34,12 +35,14 @@ BIOS 主要做了两件事：
 	实际上这里BIOS并不关心启动设备第一个扇区中是什么内容，它只是负责读取该扇区内容、并执行。
 
 ## 2.读取MBR
-硬盘上第0磁道第一个扇区被称为MBR，也就是**`Master Boot Record，即主引导记录`**
+硬盘上第0磁道第一个扇区被称为MBR，也就是`Master Boot Record，即主引导记录`
 
 它由三个部分组成：
 
 >主引导程序(Bootloader)
+
 > 硬盘分区表DPT（Disk Partition table）
+> 
 > 硬盘有效标志（55AA）
 
 系统找到BIOS所指定的硬盘的MBR后，就会将其复制到0×7c00地址所在的物理内存中。
@@ -69,6 +72,7 @@ Fedora 系统grub 路径：
 
 关于Linux的设备驱动程序的加载：
 >有一部分驱动程序直接被编译进内核镜像中
+
 >另一部分驱动程序则是以模块的形式放在initrd(ramdisk)中
 
 ### initrd
@@ -87,6 +91,7 @@ bootloader initialized RAM disk，就是由 boot loader 初始化的内存盘
 这样带来的明显的好处是精简了内核的初始化代码，而且使得内核的初始化过程更容易定制。
 ```
 [root@laptop fedora]# pwd
+
 /boot/efi/EFI/fedora
 
 [root@laptop fedora]# cat grub.cfg
@@ -289,3 +294,31 @@ Summary     : System and Service Manager
 [Systemd入门](https://80imike.github.io/posts/3761.html#journalctl)
 
 
+## 备注
+
+这里简单说下/boot命令底下的文件都是什么？
+
+```
+[jian@laptop boot]$ pwd
+/boot
+
+jian@laptop boot]$ ls --format=single-column .
+config-4.20.14-200.fc29.x86_64
+config-5.3.11-100.fc29.x86_64  // 系统kernel的配置文件，内核编译完成后保存的就是这个配置文件
+efi   // Extensible Firmware Interface（EFI，可扩展固件接口）是 Intel 为全新类型的 PC 固件的体系结构、接口和服务提出的建议标准。
+elf-memtest86+-5.01
+extlinux
+grub2  //开机管理程序grub相关数据目录
+initramfs-0-rescue-17032e20319d44259de0eb5081c2092f.img
+initramfs-4.20.14-200.fc29.x86_64.img
+initramfs-5.3.11-100.fc29.x86_64.img //虚拟文件系统文件（用initramfs代替了initrd，他们的目的是一样的，只是本身处理的方式有点不同）
+loader
+memtest86+-5.01
+System.map-4.20.14-200.fc29.x86_64
+System.map-5.3.11-100.fc29.x86_64 //是系统kernel中的变量对应表；(也可以理解为是索引文件)
+vmlinuz-0-rescue-17032e20319d44259de0eb5081c2092f
+vmlinuz-4.20.14-200.fc29.x86_64
+vmlinuz-5.3.11-100.fc29.x86_64 //系统使用kernel，用于启动的压缩内核镜像
+
+
+```
