@@ -7,7 +7,7 @@
     - [02 |  安装与配置](./安装与配置.md)
     - [03 |  Odoo应用概述](./Odoo应用概述.md)
     - [04 |  Python基础](./python基础.md)
-    - [05 |  PostgresSQL基础]()
+    - [05 |  PostgresSQL基础](./PostgreSQL基础.md)
      
 -  **技术研发篇**
     - [06 |  自建应用入门]()
