@@ -5,10 +5,6 @@
   - [Odoo 是什么](#odoo-%e6%98%af%e4%bb%80%e4%b9%88)
   - [特点](#%e7%89%b9%e7%82%b9)
   - [社区版VS企业版](#%e7%a4%be%e5%8c%ba%e7%89%88vs%e4%bc%81%e4%b8%9a%e7%89%88)
-  - [下载安装](#%e4%b8%8b%e8%bd%bd%e5%ae%89%e8%a3%85)
-    - [在线体验](#%e5%9c%a8%e7%ba%bf%e4%bd%93%e9%aa%8c)
-    - [Windows平台](#windows%e5%b9%b3%e5%8f%b0)
-    - [Linux平台](#linux%e5%b9%b3%e5%8f%b0)
 
 <!-- /TOC -->
 
@@ -35,32 +31,3 @@
 > 社区版是免费版本，只提供基本的ERP相关功能
 
 >企业版是收费版本，是按照模块进行收费，提供了更强大的功能
-
-
-
-## 下载安装
-
-
-### 在线体验
-官方提供在线体验，可以点击这里 [体验地址](http://demo.odoo.com)
-
-### Windows平台
-
-社区版Windows安装包下载 ，这里我们使用odoo 12 版本， 虽然已经出了13版本
-等熟悉了odoo 12再去了解把
-
-[下载地址](http://nightly.odoo.com/12.0/nightly/exe/)
-
-
-### Linux平台
-
-这里使用Fedora平台安装，其他平台可以根据官问文档进行安装
-
-[安装文档](https://www.odoo.com/documentation/12.0/setup/install.html)
-
-
-
-
-
-
-
