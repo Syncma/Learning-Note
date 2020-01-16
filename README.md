@@ -4,7 +4,6 @@
 [![](https://img.shields.io/github/issues/Syncma/Learning-note.svg)](https://github.com/Syncma/Learning-note/issues)  [![](https://img.shields.io/github/forks/Syncma/Learning-note.svg)](https://github.com/Syncma/Learning-note) [![](https://img.shields.io/github/stars/Syncma/Learning-note)](https://github.com/Syncma/Learning-note) ![](https://img.shields.io/badge/%E8%AF%84%E5%88%86-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%85-brightgreen.svg)
 
 
-我会将这么多年的工作经验分享给大家，
 如果你想就这些文章进行交流和讨论，欢迎在 issue 中评论。
 > 也欢迎大家入群交流，我的微信: 515618367，请备注：姓名+公司+Github。
 
@@ -19,7 +18,7 @@
 | [#4](https://github.com/Syncma/learning-note/issues/4)   | GO gin框架学习笔记    | 2020-01-05 | 待完善   |
 | [#5](https://github.com/Syncma/learning-note/issues/5)   | GO 语言学习笔记       | 2020-01-06 | `已完结` |
 | [#6](https://github.com/Syncma/learning-note/issues/6)   | 数据分析实战45讲笔记  | 2020-01-08 | `已完结` |
-| [#7](https://github.com/Syncma/learning-note/issues/7)   | 趣谈Linux操作系统笔记 | 2020-01-09 | 进行中   |
+| [#7](https://github.com/Syncma/learning-note/issues/7)   | 趣谈Linux操作系统笔记 | 2020-01-09 | 待完善   |
 | [#8](https://github.com/Syncma/learning-note/issues/8)   | docker学习笔记        | 2020-01-10 | 待完善   |
 | [#9](https://github.com/Syncma/learning-note/issues/9)   | Flask源码分析         | 2020-01-10 | `已完结` |
 | [#10](https://github.com/Syncma/learning-note/issues/10) | K8S学习笔记           | 2020-01-10 | 未开始   |
