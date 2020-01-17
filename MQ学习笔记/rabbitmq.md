@@ -86,7 +86,7 @@ channel.start_consuming()
 
 ## 组件介绍
 
-![Alt text](./rabbitmq_example.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/rabbitmq_example.png)
 
 
 

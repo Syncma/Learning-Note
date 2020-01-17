@@ -57,7 +57,7 @@ RabbitMQ 是比较有代表性的，因为是基于主从（非分布式）做�
 
 集群模式：
 
-![Alt text](./mq-8.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/mq-8.png)
 
 
 在镜像集群模式下，你创建的 queue，无论元数据还是 queue 里的消息都会存在于多个实例上，就是说，每个 RabbitMQ 节点都有这个 queue 的一个完整镜像，包含 queue 的全部数据的意思。然后每次你写消息到 queue 的时候，都会自动把消息同步到多个实例的 queue 上。
