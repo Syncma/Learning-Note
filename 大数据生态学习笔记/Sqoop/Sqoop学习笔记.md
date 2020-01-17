@@ -35,7 +35,7 @@
 
 将执行命令转化成 MapReduce 作业来实现数据的迁移，如下图：
 
-![Alt text](./sqoop-tool.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/sqoop-tool.png)
 
 
 ## 版本选择
@@ -53,11 +53,11 @@ Sqoop进行数据转移时必须依赖于Hadoop的MapReduce作业，所以Hadoop
 
 ### sqoop1架构
 
-![Alt text](./20170215235630151.jpeg)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/20170215235630151.jpeg)
 
 
 ### sqoop2架构
-![Alt text](./20170215235701370.jpeg)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/20170215235701370.jpeg)
 
 很明显，sqoop2中引入了sqoop server集中化管理connector，以及rest api，web，CLI多种交互方式，并引入权限安全机制，较sqoop1有较大改变
 
