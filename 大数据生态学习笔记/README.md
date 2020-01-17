@@ -27,7 +27,7 @@
 ### 目录
    
 -  **基础篇**
-    - [01丨 sqoop介绍 ](./sqoop介绍.md)
+    - [01丨 sqoop介绍 ](./Sqoop/Sqoop学习笔记.md)
  
 ## Flume篇
   
