@@ -4,16 +4,14 @@
 
 ### 目录
    
--  **基础篇**
-    - [01丨 sqoop介绍 ](./Sqoop/Sqoop学习笔记.md)
+  - [sqoop ](./Sqoop/README.md)
  
 ## Flume篇
   
 ## Hadoop篇
 
 ### 目录
--  **基础篇**
-    - [01丨 Hadoop介绍 ](./Hadoop/Hadoop简介.md)
+  - [Hadoop ](./Hadoop/README.md)
 
 ## HBase篇
 
