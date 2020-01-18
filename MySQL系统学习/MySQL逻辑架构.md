@@ -1,5 +1,23 @@
 # MySQL逻辑架构
-[toc]
+<!-- TOC -->
+
+- [MySQL逻辑架构](#mysql逻辑架构)
+    - [说明](#说明)
+    - [安装过程](#安装过程)
+    - [逻辑架构](#逻辑架构)
+        - [连接器](#连接器)
+            - [原理图](#原理图)
+            - [说明](#说明-1)
+    - [长连接和短连接](#长连接和短连接)
+    - [查询过程](#查询过程)
+    - [查询缓存](#查询缓存)
+    - [分析器](#分析器)
+    - [优化器](#优化器)
+    - [执行器](#执行器)
+    - [基本命令](#基本命令)
+        - [新建数据库](#新建数据库)
+
+<!-- /TOC -->
 ## 说明
 
 这里使用 **`MariaDB`** 作为数据库
@@ -40,14 +58,14 @@ FLUSH PRIVILEGES;
 ## 逻辑架构
 
 
-![Alt text](./1075436-20190215135724690-741976355.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/1075436-20190215135724690-741976355.png)
 
 
 ### 连接器
 
 #### 原理图
 
-![Alt text](./1075436-20190215135942438-1134796733.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/1075436-20190215135942438-1134796733.png)
 
 
 
@@ -68,7 +86,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 2.查询链接状态
 
-![Alt text](./Screenshot from 2020-01-18 18-13-24.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/processlist.png)
 
 
 
@@ -96,7 +114,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 
 ## 查询缓存
-![Alt text](./1075436-20190215153911680-2025779852.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/1075436-20190215153911680-2025779852.png)
 
 
 MySQL拿到一个查询请求后，会先到查询缓存看看，之前是不是执行过这条语句，如果有，就直接返回给客户端
@@ -111,7 +129,7 @@ MySQL拿到一个查询请求后，会先到查询缓存看看，之前是不是
 
 可以使用下面命令查看：
 
-![Alt text](./Screenshot from 2020-01-18 18-20-59.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/mysql-cache.png)
 
 
 这些参数介绍：
@@ -126,7 +144,7 @@ query_cache_wlock_invalidate: 如果某个数据表被锁住,是否仍然从缓�
 
 ## 分析器
 
-![Alt text](./1075436-20190215162821053-414836620.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/1075436-20190215162821053-414836620.png)
 
 如果你的语句不对，就会收到“You have an error in your SQL syntax”的错误提醒，
 
@@ -139,7 +157,7 @@ query_cache_wlock_invalidate: 如果某个数据表被锁住,是否仍然从缓�
 
 ## 执行器
 
-![Alt text](./1075436-20190215164402749-1383016574.png)
+![Alt text](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/1075436-20190215164402749-1383016574.png)
 
 查询执行的最后一个阶段是将结果返回给客户端。
 
