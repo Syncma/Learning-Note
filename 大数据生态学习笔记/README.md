@@ -1,38 +1,30 @@
 # 大数据生态系统学习
 
 ## Sqoop篇
-
-### Sqoop目录
    
   - [sqoop ](./Sqoop/README.md)
  
 ## Flume篇
-
-### Flume目录
    
   - [Flume ](./Flume/README.md)
   
 ## Hadoop篇
 
-### Hadoop目录
   - [Hadoop ](./Hadoop/README.md)
 
 ## HBase篇
 
 
 ## Kafka篇
-### kafka目录
    
   - [kafka ](./Kafka/README.md)
 
 ## Zookeeper篇
-### ZK目录
    
   - [ZK ](./Zookeeper/README.md)
 
 ## Yarn篇
 
-### Yarn目录
   - [Yarn ](./Yarn/README.md)
 
 ## Hive篇
