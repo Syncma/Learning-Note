@@ -10,6 +10,7 @@
     - [Hadoop目录](#hadoop%e7%9b%ae%e5%bd%95)
   - [HBase篇](#hbase%e7%af%87)
   - [Kafka篇](#kafka%e7%af%87)
+    - [kafka目录](#kafka%e7%9b%ae%e5%bd%95)
   - [Zookeeper篇](#zookeeper%e7%af%87)
   - [Yarn篇](#yarn%e7%af%87)
     - [Yarn目录](#yarn%e7%9b%ae%e5%bd%95)
@@ -43,6 +44,9 @@
 
 
 ## Kafka篇
+### kafka目录
+   
+  - [kafka ](./Kafka/README.md)
 
 ## Zookeeper篇
 
