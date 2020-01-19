@@ -13,7 +13,7 @@
   - [Hadoop ](./Hadoop/README.md)
 
 ## HBase篇
-
+- [HBase ](./HBase/README.md)
 
 ## Kafka篇
    
@@ -28,6 +28,8 @@
   - [Yarn ](./Yarn/README.md)
 
 ## Hive篇
+  - [Hive](./Hive/README.md)
+
 
 ## MapReduce篇
 
