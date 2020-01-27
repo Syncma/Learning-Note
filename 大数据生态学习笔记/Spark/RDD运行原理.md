@@ -1,15 +1,16 @@
 # RDD运行原理
 <!-- TOC -->
 
-- [RDD运行原理](#rdd%e8%bf%90%e8%a1%8c%e5%8e%9f%e7%90%86)
-  - [MapReduce问题](#mapreduce%e9%97%ae%e9%a2%98)
-  - [RDD](#rdd)
-    - [RDD是什么](#rdd%e6%98%af%e4%bb%80%e4%b9%88)
-    - [RDD运行过程](#rdd%e8%bf%90%e8%a1%8c%e8%bf%87%e7%a8%8b)
-    - [转换类型](#%e8%bd%ac%e6%8d%a2%e7%b1%bb%e5%9e%8b)
-    - [动作类型](#%e5%8a%a8%e4%bd%9c%e7%b1%bb%e5%9e%8b)
-    - [粗细粒度](#%e7%b2%97%e7%bb%86%e7%b2%92%e5%ba%a6)
-    - [特点](#%e7%89%b9%e7%82%b9)
+- [RDD运行原理](#rdd运行原理)
+    - [MapReduce问题](#mapreduce问题)
+    - [RDD](#rdd)
+        - [RDD是什么](#rdd是什么)
+        - [RDD运行过程](#rdd运行过程)
+        - [转换类型](#转换类型)
+        - [动作类型](#动作类型)
+        - [粗细粒度](#粗细粒度)
+        - [特点](#特点)
+        - [运行原理](#运行原理)
 
 <!-- /TOC -->
 
@@ -78,3 +79,6 @@ DAG - Lineage血缘关系图（可以快速恢复数据）
 
 3.避免不必要的序列化和反序列化开销
 
+
+### 运行原理
+![](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/20200127102003.png)
