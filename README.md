@@ -21,7 +21,7 @@
 | [#7](https://github.com/Syncma/learning-note/issues/7)   | 趣谈Linux操作系统笔记 | 2020-01-09 | 待完善   |
 | [#8](https://github.com/Syncma/learning-note/issues/8)   | docker学习笔记        | 2020-01-10 | 待完善   |
 | [#9](https://github.com/Syncma/learning-note/issues/9)   | Flask源码分析         | 2020-01-10 | `已完结` |
-| [#10](https://github.com/Syncma/learning-note/issues/10) | K8S学习笔记           | 2020-01-10 | 未开始   |
+| [#10](https://github.com/Syncma/learning-note/issues/10) | K8S学习笔记           | 2020-01-10 | 进行中   |
 | [#11](https://github.com/Syncma/learning-note/issues/11) | 大数据生态学习笔记    | 2020-01-12 | 进行中   |
 | [#12](https://github.com/Syncma/learning-note/issues/12) | Redis学习笔记         | 2020-01-12 | 待完善   |
 | [#13](https://github.com/Syncma/learning-note/issues/13) | MQ学习笔记            | 2020-01-12 | 待完善   |
