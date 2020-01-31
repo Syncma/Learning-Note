@@ -48,4 +48,4 @@
 
 ## k8s三条网络
 
-![](/home/jian/Pictures/Screenshot from 2020-01-31 17-55-59.png)
+![](./k8s-network.png)
