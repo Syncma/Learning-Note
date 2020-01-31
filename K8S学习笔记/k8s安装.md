@@ -11,6 +11,7 @@
       - [使用](#%e4%bd%bf%e7%94%a8)
       - [部署应用](#%e9%83%a8%e7%bd%b2%e5%ba%94%e7%94%a8)
   - [kubeadm方式](#kubeadm%e6%96%b9%e5%bc%8f)
+  - [区别](#%e5%8c%ba%e5%88%ab)
 
 <!-- /TOC -->
 
@@ -278,8 +279,44 @@ http://192.168.1.102:31806
 
 
 
-
-
 ## kubeadm方式
 
-kubeadm是Kubernetes1.6开始官方推出的快速部署Kubernetes集群工具，其思路是将Kubernetes相关服务容器化(Kubernetes静态Pod)以简化部署
+kubeadm是Kubernetes1.6开始官方推出的快速部署Kubernetes集群工具
+
+其思路是将Kubernetes相关服务容器化(Kubernetes静态Pod)以简化部署
+
+
+
+* 安装过程待补充(需要多台机器才能弄)
+
+
+
+## 区别
+
+> minikube是单机版
+> kubeadm 是运行在docker里面的k8s集群
+>
+> minikube 基本上你可以认为是一个实验室工具，只能单机部署，里面整合了 k8s 最主要的组件，无法真正搭建集群，且由于程序做死无法安装各种扩展插件（比如网络插件、dns 插件、ingress 插件等等），主要作用是给你了解 k8s 用的。
+>
+> 而 kudeadm 搭建出来是一个真正的 k8s 集群，可用于生产环境（HA 需要自己做），和二进制搭建出来的集群几乎没有区别。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

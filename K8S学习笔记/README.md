@@ -4,7 +4,12 @@
 ## 目录
 
 -  **基础篇**
-    - [01丨 K8S介绍 ](./K8S介绍.md)
+    - [01丨 介绍 ](./K8S介绍.md)
+    - [02丨 k8s安装 ](./k8s安装.md)
+    - [03丨 Pod与Pod控制器 ](./Pod概念与Pod控制器.md)
+    - [04丨 Name和Namespace ](./Name与Namespace.md)
+    - [05丨 Label和Label选择器 ](./Label与Label选择器.md)
+    - [06丨 Service与Ingress ](./Service与Ingress.md)
     
   
 
