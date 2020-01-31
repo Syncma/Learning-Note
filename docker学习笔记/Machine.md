@@ -4,6 +4,7 @@
 
 - [Docker Machine 学习笔记](#docker-machine-%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0)
   - [介绍](#%e4%bb%8b%e7%bb%8d)
+  - [安装](#%e5%ae%89%e8%a3%85)
 
 <!-- /TOC -->
 
@@ -21,7 +22,7 @@ Machine项目是Docker官方的开源项目，负责实现对Docker运行环境�
 >Docker Machine是一个简化Docker安装的命令行工具，通过一个简单的命令行即可在相应的平台上安装Docker，比如VirtualBox、 Digital Ocean、Microsoft Azure。
 
 
-##安装
+## 安装
 
 ```
 [root@laptop ~]# curl -L https://github.com/docker/machine/releases/download/v0.16.2/docker-machine-`uname -s`-`uname -m` >/usr/local/bin/docker-machine
