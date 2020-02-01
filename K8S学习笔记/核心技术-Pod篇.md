@@ -134,13 +134,6 @@ Pod可以由1个或多个容器组合而成
   [root@laptop tmp]# kubectl delete pod --all/[pod_name]
   ```
 
-  
-
-  
-
-  
-
-  
 
 * 多个容器组成的pod
 
@@ -164,11 +157,6 @@ Pod可以由1个或多个容器组合而成
       ports:
       - containerPort: 6379
   ```
-
-  
-
-
-
 
 
 ## Pod分类
@@ -257,12 +245,3 @@ spec:
 上面的代码表示mysql容器申请至少0.25个cpu和64MiB内存
 
 在运行过程中容器能使用的资源配额是0.5个cpu和128MiB内存
-
-
-
-
-
-
-
-
-

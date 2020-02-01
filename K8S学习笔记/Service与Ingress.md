@@ -22,4 +22,3 @@
 * Ingress是k8s集群里工作在OSI网络模型下，第7层的应用对外暴露的接口
 * Service只能进行L4流量调度，表现方式是ip+port
 * Ingress可以调度不同业务域，不同URL访问路径的业务流量
-

@@ -29,6 +29,3 @@
 * k8s里面默认的存在的名称空间有: default, kube-system, kube-public
 
 * 查询k8s里面特定的资源要带上相应的名称空间
-
-  
-
