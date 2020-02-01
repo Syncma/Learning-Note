@@ -48,4 +48,4 @@
 
 ## k8s三条网络
 
-![](./k8s-network.png)
+![](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/k8s-network.png)

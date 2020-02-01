@@ -28,7 +28,7 @@ Pause容器对应的镜像属于k8s平台的一部分，除了Pause容器还包�
 
 Pod图示：
 
-![](./pod.png)
+![](https://raw.githubusercontent.com/Syncma/Figurebed/master/img/pod-1.png)
 
 
 
