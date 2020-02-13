@@ -31,5 +31,5 @@
 | [#17](https://github.com/Syncma/learning-note/issues/17) | Odoo学习              | 2020-01-14 | 进行中   |
 | [#18](https://github.com/Syncma/learning-note/issues/18) | ELK学习               | 2020-01-14 | 未开始   |
 | [#19](https://github.com/Syncma/learning-note/issues/19) | Scrapy学习            | 2020-01-14 | 未开始   |
-| [#20](https://github.com/Syncma/learning-note/issues/20) | Tornado学习           | 2020-01-14 | 未开始   |
+| [#20](https://github.com/Syncma/learning-note/issues/20) | Tornado学习           | 2020-01-14 | 进行中   |
 | [#21](https://github.com/Syncma/learning-note/issues/21) | go夜读学习笔记        | 2020-01-15 | 未开始   |
